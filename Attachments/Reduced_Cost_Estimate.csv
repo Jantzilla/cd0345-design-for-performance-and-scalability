@@ -1,0 +1,28 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+0,6196.840000000001,74362.08,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+Reduced_Cost_Estimate,US East (N. Virginia),VPC,Network Address Translation (NAT) Gateway,0,37.35,448.20,USD,Number of NAT Gateways (1)
+Reduced_Cost_Estimate,US East (N. Virginia),VPC,Data Transfer,0,22.5,270.00,USD,"DT Inbound: Internet (100 TB per month), DT Outbound: Internet (250 GB per month), DT Intra-Region: (0 TB per month), Data transfer cost (22.5)"
+Reduced_Cost_Estimate,US East (N. Virginia),Cloudfront Distribution,Amazon CloudFront,0,105.02,1260.24,USD,"Number of requests (HTTPS) (20000 per month), Data transfer out to internet (1000 GB per month), Data transfer out to origin (1000 GB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),CloudFront S3,S3 Standard,0,25.75,309.00,USD,S3 Standard storage (1000 GB per month)
+Reduced_Cost_Estimate,US East (N. Virginia),CloudFront S3,Data Transfer,0,22.5,270.00,USD,"DT Inbound: Not selected (0 TB per month), DT Outbound: Internet (250 GB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Web Servers,Amazon EC2,0,572.31,6867.72,USD,"Operating system (Linux), Quantity (8), Pricing strategy (Standard Reserved Instances 1 Year No Upfront), Storage amount (100 GB), Instance type (t4g.xlarge)"
+Reduced_Cost_Estimate,US East (N. Virginia),App Servers,Amazon EC2,0,572.31,6867.72,USD,"Operating system (Linux), Quantity (8), Pricing strategy (Standard Reserved Instances 1 Year No Upfront), Storage amount (100 GB), Instance type (t4g.xlarge)"
+Reduced_Cost_Estimate,US East (N. Virginia),App Load Balancers,Application Load Balancer,0,1200.85,14410.20,USD,Number of Application Load Balancers (2)
+Reduced_Cost_Estimate,US East (N. Virginia),Web Load Balancer,Network Load Balancer,0,2222.85,26674.20,USD,"Number of Network Load Balancers (2), Processed bytes per NLB for TCP (250 GB per hour), Average number of new TCP connections (2500 per second), Average TCP connection duration (60 seconds)"
+Reduced_Cost_Estimate,US East (N. Virginia),MySQL Databases,Amazon RDS for MySQL,0,1415.3999999999999,16984.80,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (30 GB), Quantity (2), Instance type (db.m1.xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+
+
+Cost Reduction Explanation
+"In order to reduce the cost of the initial infrastructure, I decided to reconfigure the Load Balancer Capacity Units (LCUs) by slightly reducing the processed bytes from 200 GB per hour to 100 GB per hour for the Application Load Balancers and I reduced the processed bytes from 500 GB per hour to 250 GB per hour for the Network Load Balancers."
